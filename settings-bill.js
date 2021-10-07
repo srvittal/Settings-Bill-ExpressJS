@@ -1,5 +1,7 @@
 module.exports = function SettingsBill() {
 
+    const moment = require('moment');
+
     let smsCost = 0.75;
     let callCost = 2.75;
     let warningLevel = 20;
@@ -44,7 +46,7 @@ module.exports = function SettingsBill() {
         actionList.push({
             type: action,
             cost,
-            timestamp: new Date()
+            timestamp: moment().fromNow() 
         });
     }
 
